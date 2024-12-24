@@ -1,0 +1,15 @@
+services:  
+  api:  
+    build: . 
+      # context: ./app  
+    ports:  
+      - "8000:8000"  
+    volumes:  
+      - ./app:/app
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload  
+    
+    env_file:
+          - ./.env  
+    environment:  
+      - API_KEY =6634d222d05ad6b8503f176d40083136
+    # command: ["uvicorn", "f2:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

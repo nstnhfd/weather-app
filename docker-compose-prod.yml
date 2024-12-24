@@ -1,0 +1,12 @@
+
+services:  
+  api: 
+    image: nstn/weather 
+    # build:  
+    #   context: ./app  
+    ports:  
+      - "8000:8000"  # Map the container port to the host port  
+    
+    environment:  
+      - API_KEY=${API_KEY}  # Optionally set your API key as an environment variable  
+    # restart: always  # Restart the container if it stops
